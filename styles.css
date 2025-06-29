@@ -1,0 +1,16 @@
+#container {
+    display: flex;
+    width: 800px;
+    height: 800px;
+    flex-wrap: wrap;
+    background-color: aqua;
+    justify-content: space-evenly;
+}
+
+
+.square {
+    height: 150px;
+    width: 150px;
+    background-color: blue;
+    margin: 10px;
+}
