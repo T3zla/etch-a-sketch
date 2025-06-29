@@ -5,5 +5,7 @@ for (let i = 0; i < 16; i++){
     grid.setAttribute("class", "square");
     container.appendChild(grid);
     console.log("div made")
+    grid.addEventListener("mouseover", () => {
+        grid.setAttribute("class", "changed");
+    })
 }
-

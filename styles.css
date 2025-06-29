@@ -14,3 +14,10 @@
     background-color: blue;
     margin: 10px;
 }
+
+.changed {
+    height: 150px;
+    width: 150px;
+    background-color: pink;
+    margin: 10px;
+}
