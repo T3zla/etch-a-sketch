@@ -1,11 +1,20 @@
 const container = document.querySelector("#container");
 
-for (let i = 0; i < 16; i++){
-    const grid = document.createElement("div");
-    grid.setAttribute("class", "square");
-    container.appendChild(grid);
-    console.log("div made")
-    grid.addEventListener("mouseover", () => {
-        grid.setAttribute("class", "changed");
-    })
+function createRow() {
+    const row = document.createElement("div");
+    row.setAttribute("class", "row");
+    for (let i = 0; i < 16; i++){
+        const square = document.createElement("div");
+        square.setAttribute("class", "square");
+        row.appendChild(square);
+        square.addEventListener("mouseover", () => {
+            square.setAttribute("class", "changed");
+        })
+    }
+    container.appendChild(row)
 }
+
+for (let i = 0; i < 16; i++){
+    createRow();
+}
+

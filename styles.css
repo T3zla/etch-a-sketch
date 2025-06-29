@@ -13,25 +13,26 @@ body {
 #container {
     align-self: center;
     display: flex;
-    width: 600px;
-    height: 600px;
-    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
     background-color: aqua;
-    justify-content: space-evenly;
     margin: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
+.row{
+    display: flex;
+}
 
 .square {
-    height: 120px;
-    width: 120px;
+    height: 45px;
+    width: 45px;
     background-color: blue;
-    margin: 10px;
+   
 }
 
 .changed {
-    height: 120px;
-    width: 120px;
+    height: 45px;
+    width: 45px;
     background-color: pink;
-    margin: 10px;
-}
