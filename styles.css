@@ -1,23 +1,37 @@
-#container {
+body {
     display: flex;
-    width: 800px;
-    height: 800px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#reset {
+    width: 150px;
+    align-self: center;
+
+}
+
+#container {
+    align-self: center;
+    display: flex;
+    width: 600px;
+    height: 600px;
     flex-wrap: wrap;
     background-color: aqua;
     justify-content: space-evenly;
+    margin: 20px;
 }
 
 
 .square {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     background-color: blue;
     margin: 10px;
 }
 
 .changed {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     background-color: pink;
     margin: 10px;
 }
