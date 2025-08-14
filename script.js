@@ -33,44 +33,39 @@ userInput.textContent = "Choose your grid size";
 
 const userSelection = document.createElement("input");
 userInput.appendChild(userSelection); 
-container.appendChild(userInput);
+document.body.appendChild(userInput);
 userSelection.type = "number";
 userSelection.min = 1;
 userSelection.max = 100;
 userSelection.value = currentGridSize;
 
-currentGridSize = userSelection;
 
 const doItBtn = document.createElement("button");
 doItBtn.setAttribute("id", "MakeGridBtn");
 doItBtn.textContent = "Make my grid";
 userInput.appendChild(doItBtn);
 
-const allSquares = document.querySelectorAll(".square");
+//const allSquares = document.querySelectorAll(".square");
 const resetBtn = document.querySelector("#reset")
 
-resetBtn.addEventListener("click", () => { //When clicking reset
+resetBtn.addEventListener("click", () => { 
+    const allSquares = document.querySelectorAll(".square");
     userInput.classList.toggle("inactive");
     allSquares.forEach((square) => {
-        square.classList.remove("changed");  //Resets the squares to their original state
+        square.classList.remove("changed");  
    
     })
 })
 
-function removeSquares(){
-    allSquares.forEach((square) => {
-        square.remove();
-    })
-}
-
 doItBtn.addEventListener("click", () =>{
-    removeSquares(); 
-    makeGrid(10);
-    userInput.classList.remove("active");
-    userInput.classList.add("inactive");
+    currentGridSize = Number(userSelection.value);
+    container.innerHTML = '';
+    makeGrid(currentGridSize);
+    userInput.classList.toggle("inactive");
+    
 })
 
 
-//Make my grid currently creates a small grd
+
 
 
