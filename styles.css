@@ -69,10 +69,6 @@ body {
     display: none;
 }
 
-.square:hover {
-  background-color: gold;
-  cursor: pointer;
-}
 .square:active {
   transform: scale(0.95); /* press-down effect */
 }

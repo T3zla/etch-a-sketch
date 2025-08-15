@@ -1,6 +1,4 @@
 const container = document.querySelector("#container");
-let opacityNumber = 20;
-
 
 
 //Rows are created with divs, amount of divs to be determined
@@ -10,13 +8,17 @@ function createRow(gridSize) {
     for (let i = 0; i < gridSize; i++){
         const square = document.createElement("div");
         square.setAttribute("class", "square");
+        let opacityNumber = 20;
+        let prevOpacity = null;
         row.appendChild(square);
         square.addEventListener("mouseover", () => {
-            square.classList.add("class", "changed");
+            square.classList.add("changed");
             let opacityClass = "opacity" + opacityNumber.toString();
-            square.classList.add("class", opacityClass);
+            square.classList.add(opacityClass);
             opacityNumber += 10;
-            
+            if (prevOpacity) {
+                square.classList.remove(prevOpacity);
+            }
         })
     }
     container.appendChild(row)
