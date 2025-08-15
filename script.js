@@ -8,20 +8,18 @@ function createRow(gridSize) {
     for (let i = 0; i < gridSize; i++){
         const square = document.createElement("div");
         square.setAttribute("class", "square");
-        let opacityNumber = 20;
+        let opacityValue = 0.2;
         let prevOpacity = null;
         row.appendChild(square);
+
         square.addEventListener("mouseover", () => {
             square.classList.add("changed");
-            let opacityClass = "opacity" + opacityNumber.toString();
-            square.classList.add(opacityClass);
-            opacityNumber += 10;
-            if (prevOpacity) {
-                square.classList.remove(prevOpacity);
-            }
-        })
+            square.style.opacity = opacityValue;
+            opacityValue += 0.1;
+            if (opacityValue > 1) opacityValue = 1;
+        });
     }
-    container.appendChild(row)
+    container.appendChild(row);
 }
 
 // Creates multiple rows to create a grid
